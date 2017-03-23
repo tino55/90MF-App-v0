@@ -27,5 +27,11 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form3 frm = new Form3();
+            frm.Show();
+        }
     }
 }
