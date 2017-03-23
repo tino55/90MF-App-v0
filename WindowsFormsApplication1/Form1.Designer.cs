@@ -29,32 +29,32 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(754, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 50);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Teams (Coming Soon)";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(754, 114);
+            this.button2.Location = new System.Drawing.Point(754, 33);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(180, 50);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Wage Calculator";
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Teams (Coming Soon)";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(754, 114);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 50);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Wage Calculator";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -98,13 +98,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(987, 588);
+            this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
             this.Name = "Form1";
             this.Text = "90MF App";
             this.ResumeLayout(false);
@@ -113,8 +113,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
