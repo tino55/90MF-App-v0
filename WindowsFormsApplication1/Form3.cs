@@ -12,14 +12,23 @@ namespace WindowsFormsApplication1
 {
     public partial class Form3 : Form
     {
+
+        public double min = 0;
+        public double max = 0;
+        public double mem = 0;
+        public double r = 0;
+        public double each = 0;
+
         public Form3()
         {
             InitializeComponent();
 
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
+            
 
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -30,36 +39,65 @@ namespace WindowsFormsApplication1
         {
             String fa = comboBox1.SelectedItem.ToString();
 
+
+            
+
             switch (fa)
             {
                 case "AFA":
                     falabel.Text = "Afternoon FA";
+                    min = double.Parse(label77.Text);
+                    max = double.Parse(label85.Text);
+                    mem = double.Parse(label93.Text);
                     break;
                 case "AMFA":
                     falabel.Text = "Ante Meridiem FA";
+                    min = double.Parse(label78.Text);
+                    max = double.Parse(label86.Text);
+                    mem = double.Parse(label94.Text);
                     break;
                 case "EEFA":
                     falabel.Text = "Early Evening FA";
+                    min = double.Parse(label79.Text);
+                    max = double.Parse(label87.Text);
+                    mem = double.Parse(label95.Text);
                     break;
                 case "EFA":
                     falabel.Text = "Evening FA";
+                    min = double.Parse(label80.Text);
+                    max = double.Parse(label88.Text);
+                    mem = double.Parse(label96.Text);
                     break;
                 case "LEFA":
                     falabel.Text = "Late Evening FA";
+                    min = double.Parse(label81.Text);
+                    max = double.Parse(label89.Text);
+                    mem = double.Parse(label97.Text);
                     break;
                 case "PFA":
                     falabel.Text = "Perpetual FA";
+                    min = double.Parse(label82.Text);
+                    max = double.Parse(label90.Text);
+                    mem = double.Parse(label98.Text);
                     break;
                 case "PTFA":
                     falabel.Text = "Prime Time FA";
+                    min = double.Parse(label83.Text);
+                    max = double.Parse(label91.Text);
+                    mem = double.Parse(label99.Text);
                     break;
                 case "TFA":
                     falabel.Text = "Timeless FA";
+                    min = double.Parse(label84.Text);
+                    max = double.Parse(label92.Text);
+                    mem = double.Parse(label100.Text);
                     break;
                 default:
                     falabel.Text = "Please select an FA";
                     break;
             }
+
+           
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -93,6 +131,64 @@ namespace WindowsFormsApplication1
             {
                 label4.Text = "" + pos + "th";
             }
+
+            r = max - min;
+
+            each = r / mem;
+
+
+            String div = comboBox2.Text;
+
+            int minpos = 0;
+            double maxpos = 0;
+
+            switch (div)
+            {
+                case "Div 1":
+                    minpos = 0;
+                    maxpos = 20;
+                    break;
+                case "Div 2":
+                    minpos = 21;
+                    maxpos = 40;
+                    break;
+                case "Div 3":
+                    minpos = 41;
+                    maxpos = 60;
+                    break;
+                case "Div 4":
+                    minpos = 61;
+                    maxpos = 80;
+                    break;
+                case "Div 5":
+                    minpos = 81;
+                    maxpos = 100;
+                    break;
+                default:
+                    break;
+            }
+
+            String text = textBox1.Text;
+            int p = Int32.Parse(text);
+
+            double ps =(minpos + p - 1);
+
+            double minrep = ((mem - minpos) * each) + min;
+
+            if (mem < maxpos)
+            {
+                maxpos = mem;
+            }
+
+            double maxrep = ((mem - maxpos) * each) + min;
+
+            label101.Text = "The maximum possible rep for finishing 1st = " + minrep.ToString();
+            label102.Text = "The minimum possible rep for finishing last = " + maxrep.ToString();
+
+            double rep = (mem - ps) * each + min;
+
+            label43.Text = rep.ToString("#.##");
+
         }
 
 
@@ -487,6 +583,7 @@ namespace WindowsFormsApplication1
 
         private void label37_TextChanged(object sender, EventArgs e)
         {
+            //adds rep from seasons to calculate total projected rep
             double a = double.Parse(label37.Text);
             double b = double.Parse(label38.Text);
             double c = double.Parse(label39.Text);
