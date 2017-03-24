@@ -122,11 +122,12 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Silver;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(827, 314);
+            this.label5.Location = new System.Drawing.Point(809, 314);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 31);
             this.label5.TabIndex = 6;
             this.label5.Text = "0k";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // button1
             // 
