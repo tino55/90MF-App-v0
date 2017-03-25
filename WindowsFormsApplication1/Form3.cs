@@ -29,12 +29,13 @@ namespace WindowsFormsApplication1
 
         }
 
-
+        //main menu button
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        //fa combo box
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             String fa = comboBox1.SelectedItem.ToString();
@@ -100,6 +101,7 @@ namespace WindowsFormsApplication1
            
         }
 
+        //position text box
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             String x = textBox1.Text;
@@ -192,7 +194,7 @@ namespace WindowsFormsApplication1
         }
 
 
-
+        //division combo box
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             String div = comboBox2.SelectedItem.ToString();
@@ -220,6 +222,7 @@ namespace WindowsFormsApplication1
             }
         }
 
+        //copys values form textboxes to labels
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             label25.Text = textBox2.Text;
@@ -260,6 +263,8 @@ namespace WindowsFormsApplication1
             label32.Text = textBox9.Text;
         }
 
+
+        //calcs to change labels to user inputs
         private void label25_TextChanged(object sender, EventArgs e)
         {
             double r = 0;
@@ -582,6 +587,137 @@ namespace WindowsFormsApplication1
         }
 
         private void label37_TextChanged(object sender, EventArgs e)
+        {
+            //adds rep from seasons to calculate total projected rep
+            double a = double.Parse(label37.Text);
+            double b = double.Parse(label38.Text);
+            double c = double.Parse(label39.Text);
+            double d = double.Parse(label40.Text);
+            double f = double.Parse(label41.Text);
+
+            double r = a + b + c + d + f;
+            String x = r.ToString();
+            label57.Text = x;
+        }
+
+        private void label43_TextChanged(object sender, EventArgs e)
+        {
+            label22.Text = label43.Text;
+        }
+
+        private void label22_TextChanged(object sender, EventArgs e)
+        {
+            double r = 0;
+            double b = 0;
+
+
+            if (label23.Text == "0")
+            {
+                label24.Text = label22.Text;
+            }
+            else
+            {
+                double l = double.Parse(label22.Text);
+                double c = double.Parse(label23.Text);
+
+                l = l / 2;
+                c = c / 2;
+
+                if (l >= c)
+                {
+                    b = l / 2;
+                    l = l + b;
+                }
+                else
+                {
+                    b = c / 2;
+                    c = c + b;
+                }
+
+                r = l + c;
+                String x = r.ToString();
+                label24.Text = x;
+            }
+        }
+
+        private void label23_TextChanged(object sender, EventArgs e)
+        {
+            double r = 0;
+            double b = 0;
+
+            if (label22.Text == "0")
+            {
+                label24.Text = label23.Text;
+            }
+            else
+            {
+                double l = double.Parse(label22.Text);
+                double c = double.Parse(label23.Text);
+                c = c / 2;
+                l = l / 2;
+
+                if (c >= l)
+                {
+                    b = c / 2;
+                    c = c + b;
+                }
+                else
+                {
+                    b = l / 2;
+                    l = l + b;
+                }
+
+                r = l + c;
+                String x = r.ToString();
+                label24.Text = x;
+
+            }
+
+        }
+
+        private void label41_TextChanged(object sender, EventArgs e)
+        {
+            //adds rep from seasons to calculate total projected rep
+            double a = double.Parse(label37.Text);
+            double b = double.Parse(label38.Text);
+            double c = double.Parse(label39.Text);
+            double d = double.Parse(label40.Text);
+            double f = double.Parse(label41.Text);
+
+            double r = a + b + c + d + f;
+            String x = r.ToString();
+            label57.Text = x;
+        }
+
+        private void label40_TextChanged(object sender, EventArgs e)
+        {
+            //adds rep from seasons to calculate total projected rep
+            double a = double.Parse(label37.Text);
+            double b = double.Parse(label38.Text);
+            double c = double.Parse(label39.Text);
+            double d = double.Parse(label40.Text);
+            double f = double.Parse(label41.Text);
+
+            double r = a + b + c + d + f;
+            String x = r.ToString();
+            label57.Text = x;
+        }
+
+        private void label39_TextChanged(object sender, EventArgs e)
+        {
+            //adds rep from seasons to calculate total projected rep
+            double a = double.Parse(label37.Text);
+            double b = double.Parse(label38.Text);
+            double c = double.Parse(label39.Text);
+            double d = double.Parse(label40.Text);
+            double f = double.Parse(label41.Text);
+
+            double r = a + b + c + d + f;
+            String x = r.ToString();
+            label57.Text = x;
+        }
+
+        private void label38_TextChanged(object sender, EventArgs e)
         {
             //adds rep from seasons to calculate total projected rep
             double a = double.Parse(label37.Text);
