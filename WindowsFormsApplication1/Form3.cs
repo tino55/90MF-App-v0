@@ -18,6 +18,9 @@ namespace WindowsFormsApplication1
         public double mem = 0;
         public double r = 0;
         public double each = 0;
+        public double maxmon = 0;
+        public double ps = 0;
+        public int p = 0;
 
         public Form3()
         {
@@ -50,48 +53,56 @@ namespace WindowsFormsApplication1
                     min = double.Parse(label77.Text);
                     max = double.Parse(label85.Text);
                     mem = double.Parse(label93.Text);
+                    maxmon = 4125357;
                     break;
                 case "AMFA":
                     falabel.Text = "Ante Meridiem FA";
                     min = double.Parse(label78.Text);
                     max = double.Parse(label86.Text);
                     mem = double.Parse(label94.Text);
+                    maxmon = 4380446;
                     break;
                 case "EEFA":
                     falabel.Text = "Early Evening FA";
                     min = double.Parse(label79.Text);
                     max = double.Parse(label87.Text);
                     mem = double.Parse(label95.Text);
+                    maxmon = 5557589;
                     break;
                 case "EFA":
                     falabel.Text = "Evening FA";
                     min = double.Parse(label80.Text);
                     max = double.Parse(label88.Text);
                     mem = double.Parse(label96.Text);
+                    maxmon = 6061964;
                     break;
                 case "LEFA":
                     falabel.Text = "Late Evening FA";
                     min = double.Parse(label81.Text);
                     max = double.Parse(label89.Text);
                     mem = double.Parse(label97.Text);
+                    maxmon = 4590803;
                     break;
                 case "PFA":
                     falabel.Text = "Perpetual FA";
                     min = double.Parse(label82.Text);
                     max = double.Parse(label90.Text);
                     mem = double.Parse(label98.Text);
+                    maxmon = 6206160;
                     break;
                 case "PTFA":
                     falabel.Text = "Prime Time FA";
                     min = double.Parse(label83.Text);
                     max = double.Parse(label91.Text);
                     mem = double.Parse(label99.Text);
+                    maxmon = 5024017;
                     break;
                 case "TFA":
                     falabel.Text = "Timeless FA";
                     min = double.Parse(label84.Text);
                     max = double.Parse(label92.Text);
                     mem = double.Parse(label100.Text);
+                    maxmon = 4801250;
                     break;
                 default:
                     falabel.Text = "Please select an FA";
@@ -171,9 +182,9 @@ namespace WindowsFormsApplication1
             }
 
             String text = textBox1.Text;
-            int p = Int32.Parse(text);
+            p = Int32.Parse(text);
 
-            double ps =(minpos + p - 1);
+            ps =(minpos + p - 1);
 
             double minrep = ((mem - minpos) * each) + min;
 
@@ -729,6 +740,15 @@ namespace WindowsFormsApplication1
             double r = a + b + c + d + f;
             String x = r.ToString();
             label57.Text = x;
+
+             
+        }
+
+        private void label57_TextChanged(object sender, EventArgs e)
+        {
+            double monper = maxmon / (mem-1);
+            double perpos = (mem - ps) * monper;
+            label103.Text = " Estimated Prizemoney = £" + perpos.ToString("#");
         }
     }
 }

@@ -153,6 +153,7 @@
             this.label41 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
+            this.label103 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -1510,6 +1511,16 @@
             this.label57.Size = new System.Drawing.Size(24, 25);
             this.label57.TabIndex = 47;
             this.label57.Text = "0";
+            this.label57.TextChanged += new System.EventHandler(this.label57_TextChanged);
+            // 
+            // label103
+            // 
+            this.label103.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label103.Location = new System.Drawing.Point(43, 419);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(435, 23);
+            this.label103.TabIndex = 48;
+            this.label103.Text = "Estimated prizemoney = ";
             // 
             // Form3
             // 
@@ -1517,6 +1528,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.label103);
             this.Controls.Add(this.label57);
             this.Controls.Add(this.label56);
             this.Controls.Add(this.label41);
@@ -1701,5 +1713,6 @@
         private System.Windows.Forms.Label label77;
         private System.Windows.Forms.Label label102;
         private System.Windows.Forms.Label label101;
+        private System.Windows.Forms.Label label103;
     }
 }
