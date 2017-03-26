@@ -33,5 +33,10 @@ namespace WindowsFormsApplication1
             Form3 frm = new Form3();
             frm.Show();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://90minutefever.atlassian.net/wiki/display/90MF/Game+Guide");
+        }
     }
 }

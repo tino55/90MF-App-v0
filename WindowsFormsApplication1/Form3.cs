@@ -21,6 +21,10 @@ namespace WindowsFormsApplication1
         public double maxmon = 0;
         public double ps = 0;
         public int p = 0;
+        public double maxcup = 0;
+        public int rounds = 1;
+        public double comrounds = 0;
+        public double comrep = 0;
 
         public Form3()
         {
@@ -28,7 +32,13 @@ namespace WindowsFormsApplication1
 
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
-            
+            comboBox3.Items.Clear();
+            comboBox4.Items.Clear();
+            comboBox5.SelectedIndex = 0;
+            comboBox6.SelectedIndex = 0;
+            comboBox7.SelectedIndex = 0;
+
+
 
         }
 
@@ -41,11 +51,13 @@ namespace WindowsFormsApplication1
         //fa combo box
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            comboBox8.SelectedItem = comboBox1.SelectedItem;
+
             String fa = comboBox1.SelectedItem.ToString();
 
-
             
-
+            
             switch (fa)
             {
                 case "AFA":
@@ -54,6 +66,9 @@ namespace WindowsFormsApplication1
                     max = double.Parse(label85.Text);
                     mem = double.Parse(label93.Text);
                     maxmon = 4125357;
+                    maxcup = max * 90 / 100;
+                    comrounds = 4;
+                    comrep = max * 85 / 100;
                     break;
                 case "AMFA":
                     falabel.Text = "Ante Meridiem FA";
@@ -61,6 +76,9 @@ namespace WindowsFormsApplication1
                     max = double.Parse(label86.Text);
                     mem = double.Parse(label94.Text);
                     maxmon = 4380446;
+                    maxcup = max * 90 / 100;
+                    comrounds = 5;
+                    comrep = max * 85 / 100;
                     break;
                 case "EEFA":
                     falabel.Text = "Early Evening FA";
@@ -68,6 +86,9 @@ namespace WindowsFormsApplication1
                     max = double.Parse(label87.Text);
                     mem = double.Parse(label95.Text);
                     maxmon = 5557589;
+                    maxcup = max * 90 / 100;
+                    comrounds = 5;
+                    comrep = max * 85 / 100;
                     break;
                 case "EFA":
                     falabel.Text = "Evening FA";
@@ -75,6 +96,9 @@ namespace WindowsFormsApplication1
                     max = double.Parse(label88.Text);
                     mem = double.Parse(label96.Text);
                     maxmon = 6061964;
+                    maxcup = max * 90 / 100;
+                    comrounds = 7;
+                    comrep = max * 85 / 100;
                     break;
                 case "LEFA":
                     falabel.Text = "Late Evening FA";
@@ -82,6 +106,9 @@ namespace WindowsFormsApplication1
                     max = double.Parse(label89.Text);
                     mem = double.Parse(label97.Text);
                     maxmon = 4590803;
+                    maxcup = max * 90 / 100;
+                    comrounds = 5;
+                    comrep = max * 85 / 100;
                     break;
                 case "PFA":
                     falabel.Text = "Perpetual FA";
@@ -89,6 +116,9 @@ namespace WindowsFormsApplication1
                     max = double.Parse(label90.Text);
                     mem = double.Parse(label98.Text);
                     maxmon = 6206160;
+                    maxcup = max * 90 / 100;
+                    comrounds = 7;
+                    comrep = max * 85 / 100;
                     break;
                 case "PTFA":
                     falabel.Text = "Prime Time FA";
@@ -96,6 +126,9 @@ namespace WindowsFormsApplication1
                     max = double.Parse(label91.Text);
                     mem = double.Parse(label99.Text);
                     maxmon = 5024017;
+                    maxcup = max * 90 / 100;
+                    comrounds = 4;
+                    comrep = max * 85 / 100;
                     break;
                 case "TFA":
                     falabel.Text = "Timeless FA";
@@ -103,12 +136,16 @@ namespace WindowsFormsApplication1
                     max = double.Parse(label92.Text);
                     mem = double.Parse(label100.Text);
                     maxmon = 4801250;
+                    maxcup = max * 90 / 100;
+                    comrounds = 4;
+                    comrep = max * 85 / 100;
                     break;
                 default:
                     falabel.Text = "Please select an FA";
                     break;
             }
-
+             
+            
            
         }
 
@@ -749,6 +786,527 @@ namespace WindowsFormsApplication1
             double monper = maxmon / (mem-1);
             double perpos = (mem - ps) * monper;
             label103.Text = " Estimated Prizemoney = £" + perpos.ToString("#");
+        }
+
+        private void comboBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String cuptext = comboBox3.SelectedItem.ToString(); ;
+            double cup = 0;
+            
+            double cupeach = maxcup / rounds - 1;
+
+            switch (cuptext)
+            {
+                case "1st":
+                    cup = 0;
+                    break;
+                case "2nd":
+                    cup = cupeach;
+                    break;
+                case "3rd":
+                    cup = cupeach * 2;
+                    break;
+                case "4th":
+                    cup = cupeach * 3;
+                    break;
+                case "5th":
+                    cup = cupeach * 5;
+                    break;
+                case "6th":
+                    cup = cupeach * 6;
+                    break;
+                case "Final":
+                    cup = cupeach * 7;
+                    break;
+                case "Winner":
+                    cup = cupeach * 8;
+                    break;
+                default:
+                    break;
+            }
+
+            label51.Text = cup.ToString("#.##");
+        }
+
+        private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox1.SelectedItem = comboBox8.SelectedItem;
+
+            
+
+            if (mem <= 8)
+            {
+                rounds = 3;
+                comboBox3.Items.Clear();
+                comboBox3.Items.Add("1st");
+                comboBox3.Items.Add("2nd");
+                comboBox3.Items.Add("Final");
+                comboBox3.Items.Add("Winner");
+                
+            }
+            else if (mem <= 16)
+            {
+                rounds = 4;
+                comboBox3.Items.Clear();
+                comboBox3.Items.Add("1st");
+                comboBox3.Items.Add("2nd");
+                comboBox3.Items.Add("3rd");
+                comboBox3.Items.Add("Final");
+                comboBox3.Items.Add("Winner");
+                
+            }
+            else if (mem <= 32)
+            {
+                rounds = 5;
+                comboBox3.Items.Clear();
+                comboBox3.Items.Add("1st");
+                comboBox3.Items.Add("2nd");
+                comboBox3.Items.Add("3rd");
+                comboBox3.Items.Add("4th");
+                comboBox3.Items.Add("Final");
+                comboBox3.Items.Add("Winner");
+            }
+            else if (mem <= 64)
+            {
+                rounds = 6;
+                comboBox3.Items.Clear();
+                comboBox3.Items.Add("1st");
+                comboBox3.Items.Add("2nd");
+                comboBox3.Items.Add("3rd");
+                comboBox3.Items.Add("4th");
+                comboBox3.Items.Add("5th");
+                comboBox3.Items.Add("Final");
+                comboBox3.Items.Add("Winner");
+            }
+            else
+            {
+                rounds = 7;
+                comboBox3.Items.Clear();
+                comboBox3.Items.Add("1st");
+                comboBox3.Items.Add("2nd");
+                comboBox3.Items.Add("3rd");
+                comboBox3.Items.Add("4th");
+                comboBox3.Items.Add("5th");
+                comboBox3.Items.Add("6th");
+                comboBox3.Items.Add("Final");
+                comboBox3.Items.Add("Winner");
+
+            }
+
+            if (comrounds == 3)
+            {
+                comboBox4.Items.Clear();
+                comboBox4.Items.Add("1st");
+                comboBox4.Items.Add("2nd");
+                comboBox4.Items.Add("Final");
+                comboBox4.Items.Add("Winner");
+
+            }
+            else if (comrounds == 4)
+            {
+                comboBox4.Items.Clear();
+                comboBox4.Items.Add("1st");
+                comboBox4.Items.Add("2nd");
+                comboBox4.Items.Add("3rd");
+                comboBox4.Items.Add("Final");
+                comboBox4.Items.Add("Winner");
+
+            }
+            else if (comrounds ==5)
+            {
+                comboBox4.Items.Clear();
+                comboBox4.Items.Add("1st");
+                comboBox4.Items.Add("2nd");
+                comboBox4.Items.Add("3rd");
+                comboBox4.Items.Add("4th");
+                comboBox4.Items.Add("Final");
+                comboBox4.Items.Add("Winner");
+            }
+            else if (comrounds==6)
+            {
+                comboBox4.Items.Clear();
+                comboBox4.Items.Add("1st");
+                comboBox4.Items.Add("2nd");
+                comboBox4.Items.Add("3rd");
+                comboBox4.Items.Add("4th");
+                comboBox4.Items.Add("5th");
+                comboBox4.Items.Add("Final");
+                comboBox4.Items.Add("Winner");
+            }
+            else
+            {
+                comboBox4.Items.Clear();
+                comboBox4.Items.Add("1st");
+                comboBox4.Items.Add("2nd");
+                comboBox4.Items.Add("3rd");
+                comboBox4.Items.Add("4th");
+                comboBox4.Items.Add("5th");
+                comboBox4.Items.Add("6th");
+                comboBox4.Items.Add("Final");
+                comboBox4.Items.Add("Winner");
+
+            }
+        }
+
+        private void label51_TextChanged(object sender, EventArgs e)
+        {
+
+            double facup;
+            if (!double.TryParse(label51.Text, out facup))
+            {
+                facup = 0; // Default on parsing failure
+            }
+            double comcup;
+            if (!double.TryParse(label52.Text, out comcup))
+            {
+                comcup = 0; // Default on parsing failure
+            }
+            double ninecup;
+            if (!double.TryParse(label53.Text, out ninecup))
+            {
+                ninecup = 0; // Default on parsing failure
+            }
+            double chcup;
+            if (!double.TryParse(label54.Text, out chcup))
+            {
+                chcup = 0; // Default on parsing failure
+            }
+            double spcup;
+            if (!double.TryParse(label55.Text, out spcup))
+            {
+                spcup = 0; // Default on parsing failure
+            }
+
+
+            if (facup > comcup 
+                && facup > ninecup 
+                && facup > chcup 
+                && facup > spcup)
+            {
+                label50.Text = facup.ToString();
+            }
+        }
+
+        private void label52_TextChanged(object sender, EventArgs e)
+        {
+            double facup;
+            if (!double.TryParse(label51.Text, out facup))
+            {
+                facup = 0; // Default on parsing failure
+            }
+            double comcup;
+            if (!double.TryParse(label52.Text, out comcup))
+            {
+                comcup = 0; // Default on parsing failure
+            }
+            double ninecup;
+            if (!double.TryParse(label53.Text, out ninecup))
+            {
+                ninecup = 0; // Default on parsing failure
+            }
+            double chcup;
+            if (!double.TryParse(label54.Text, out chcup))
+            {
+                chcup = 0; // Default on parsing failure
+            }
+            double spcup;
+            if (!double.TryParse(label55.Text, out spcup))
+            {
+                spcup = 0; // Default on parsing failure
+            }
+
+            if (comcup > facup
+                && facup > ninecup
+                && facup > chcup
+                && facup > spcup)
+            {
+                label50.Text = comcup.ToString();
+            }
+        }
+
+        private void label53_TextChanged(object sender, EventArgs e)
+        {
+            double facup;
+            if (!double.TryParse(label51.Text, out facup))
+            {
+                facup = 0; // Default on parsing failure
+            }
+            double comcup;
+            if (!double.TryParse(label52.Text, out comcup))
+            {
+                comcup = 0; // Default on parsing failure
+            }
+            double ninecup;
+            if (!double.TryParse(label53.Text, out ninecup))
+            {
+                ninecup = 0; // Default on parsing failure
+            }
+            double chcup;
+            if (!double.TryParse(label54.Text, out chcup))
+            {
+                chcup = 0; // Default on parsing failure
+            }
+            double spcup;
+            if (!double.TryParse(label55.Text, out spcup))
+            {
+                spcup = 0; // Default on parsing failure
+            }
+
+            if (ninecup > comcup
+                && ninecup > facup
+                && ninecup > chcup
+                && ninecup > spcup)
+            {
+                label50.Text = ninecup.ToString();
+            }
+        }
+
+        private void label54_TextChanged(object sender, EventArgs e)
+        {
+            double facup;
+            if (!double.TryParse(label51.Text, out facup))
+            {
+                facup = 0; // Default on parsing failure
+            }
+            double comcup;
+            if (!double.TryParse(label52.Text, out comcup))
+            {
+                comcup = 0; // Default on parsing failure
+            }
+            double ninecup;
+            if (!double.TryParse(label53.Text, out ninecup))
+            {
+                ninecup = 0; // Default on parsing failure
+            }
+            double chcup;
+            if (!double.TryParse(label54.Text, out chcup))
+            {
+                chcup = 0; // Default on parsing failure
+            }
+            double spcup;
+            if (!double.TryParse(label55.Text, out spcup))
+            {
+                spcup = 0; // Default on parsing failure
+            }
+
+            if (chcup > comcup
+                && chcup > ninecup
+                && chcup > facup
+                && chcup > spcup)
+            {
+                label50.Text = chcup.ToString();
+            }
+        }
+
+        private void label55_TextChanged(object sender, EventArgs e)
+        {
+            double facup;
+            if (!double.TryParse(label51.Text, out facup))
+            {
+                facup = 0; // Default on parsing failure
+            }
+            double comcup;
+            if (!double.TryParse(label52.Text, out comcup))
+            {
+                comcup = 0; // Default on parsing failure
+            }
+            double ninecup;
+            if (!double.TryParse(label53.Text, out ninecup))
+            {
+                ninecup = 0; // Default on parsing failure
+            }
+            double chcup;
+            if (!double.TryParse(label54.Text, out chcup))
+            {
+                chcup = 0; // Default on parsing failure
+            }
+            double spcup;
+            if (!double.TryParse(label55.Text, out spcup))
+            {
+                spcup = 0; // Default on parsing failure
+            }
+
+            if (spcup > comcup
+                && spcup > ninecup
+                && spcup > chcup
+                && spcup > facup)
+            {
+                label50.Text = spcup.ToString();
+            }
+        }
+
+        private void label50_TextChanged(object sender, EventArgs e)
+        {
+            label23.Text = label50.Text;
+        }
+
+        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            maxcup = 58;
+            double mincup = 29;
+            rounds = 5;
+
+            double r = maxcup - mincup;
+            double each = r / (rounds);
+            double rep = 0;
+
+            switch (comboBox7.Text)
+            {
+                case "1st":
+                    rep = mincup;
+                    break;
+                case "2nd":
+                    rep = mincup + each;
+                    break;
+                case "3rd":
+                    rep = mincup + (each * 2);
+                    break;
+                case "4th":
+                    rep = mincup + (each * 3);
+                    break;
+                case "Final":
+                    rep = mincup + (each * 4);
+                    break;
+                case "Winner":
+                    rep = mincup + (each * 5);
+                    break;
+                default:
+                    rep = 0;
+                    break;
+            }
+
+            label55.Text = rep.ToString("#.##");
+        }
+
+        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            maxcup = 48;
+            double mincup = 24;
+            rounds = 4;
+
+            double r = maxcup - mincup;
+            double each = r / (rounds);
+            double rep = 0;
+
+            switch (comboBox6.Text)
+            {
+                case "1st":
+                    rep = mincup;
+                    break;
+                case "2nd":
+                    rep = mincup + each;
+                    break;
+                case "3rd":
+                    rep = mincup + (each * 2);
+                    break;
+                case "Final":
+                    rep = mincup + (each * 3);
+                    break;
+                case "Winner":
+                    rep = mincup + (each * 4);
+                    break;
+                default:
+                    rep = 0;
+                    break;
+            }
+
+            label54.Text = rep.ToString("#.##");
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            maxcup = 53;
+            double mincup = 0;
+            rounds = 9;
+
+            
+            double each = maxcup / (rounds);
+            double rep = 0;
+
+            switch (comboBox5.Text)
+            {
+                case "1st":
+                    rep = mincup;
+                    break;
+                case "2nd":
+                    rep = mincup + each;
+                    break;
+                case "3rd":
+                    rep = mincup + (each * 2);
+                    break;
+                case "4th":
+                    rep = mincup + (each * 3);
+                    break;
+                case "5th":
+                    rep = mincup + (each * 4);
+                    break;
+                case "6th":
+                    rep = mincup + (each * 5);
+                    break;
+                case "7th":
+                    rep = mincup + (each * 6);
+                    break;
+                case "8th":
+                    rep = mincup + (each * 7);
+                    break;
+                case "Final":
+                    rep = mincup + (each * 8);
+                    break;
+                case "Winner":
+                    rep = mincup + (each * 9);
+                    break;
+                default:
+                    rep = 0;
+                    break;
+            }
+
+            label53.Text = rep.ToString("#.##");
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String cuptext = comboBox4.SelectedItem.ToString();
+            double cup = 0;
+
+            double cupeach = comrep / comrounds - 1;
+
+            switch (cuptext)
+            {
+                case "1st":
+                    cup = 0;
+                    break;
+                case "2nd":
+                    cup = cupeach;
+                    break;
+                case "3rd":
+                    cup = cupeach * 2;
+                    break;
+                case "4th":
+                    cup = cupeach * 3;
+                    break;
+                case "5th":
+                    cup = cupeach * 5;
+                    break;
+                case "6th":
+                    cup = cupeach * 6;
+                    break;
+                case "Final":
+                    cup = cupeach * 7;
+                    break;
+                case "Winner":
+                    cup = cupeach * 8;
+                    break;
+                default:
+                    cup = 0;
+                    break;
+            }
+
+            label52.Text = cup.ToString("#.##");
         }
     }
 }
