@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form3 : Form
+    public partial class repCalc : Form
     {
 
         public double min = 0;
@@ -26,7 +26,7 @@ namespace WindowsFormsApplication1
         public double comrounds = 0;
         public double comrep = 0;
 
-        public Form3()
+        public repCalc()
         {
             InitializeComponent();
 

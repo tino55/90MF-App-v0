@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class Form2
+    partial class wageCalc
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(wageCalc));
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,6 +39,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -122,16 +123,15 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(809, 314);
+            this.label5.Location = new System.Drawing.Point(201, 200);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 31);
+            this.label5.Size = new System.Drawing.Size(136, 31);
             this.label5.TabIndex = 6;
             this.label5.Text = "0k";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // button1
             // 
@@ -158,6 +158,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(532, 113);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(404, 363);
@@ -172,7 +173,6 @@
             this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
@@ -182,6 +182,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form2";
             this.Text = "Wage Calculator";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

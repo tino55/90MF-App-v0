@@ -19,7 +19,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 frm = new Form2();
+            wageCalc frm = new wageCalc();
             frm.Show();
         }
 
@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form3 frm = new Form3();
+            repCalc frm = new repCalc();
             frm.Show();
         }
 
