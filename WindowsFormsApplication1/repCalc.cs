@@ -65,7 +65,7 @@ namespace WindowsFormsApplication1
                     min = double.Parse(label77.Text);
                     max = double.Parse(label85.Text);
                     mem = double.Parse(label93.Text);
-                    maxmon = 4125357;
+                    maxmon = 4731513;
                     maxcup = max * 90 / 100;
                     comrounds = 4;
                     comrep = max * 85 / 100;
@@ -75,7 +75,7 @@ namespace WindowsFormsApplication1
                     min = double.Parse(label78.Text);
                     max = double.Parse(label86.Text);
                     mem = double.Parse(label94.Text);
-                    maxmon = 4380446;
+                    maxmon = 4750089;
                     maxcup = max * 90 / 100;
                     comrounds = 5;
                     comrep = max * 85 / 100;
@@ -85,7 +85,7 @@ namespace WindowsFormsApplication1
                     min = double.Parse(label79.Text);
                     max = double.Parse(label87.Text);
                     mem = double.Parse(label95.Text);
-                    maxmon = 5557589;
+                    maxmon = 5799196;
                     maxcup = max * 90 / 100;
                     comrounds = 5;
                     comrep = max * 85 / 100;
@@ -95,7 +95,7 @@ namespace WindowsFormsApplication1
                     min = double.Parse(label80.Text);
                     max = double.Parse(label88.Text);
                     mem = double.Parse(label96.Text);
-                    maxmon = 6061964;
+                    maxmon = 6336160;
                     maxcup = max * 90 / 100;
                     comrounds = 7;
                     comrep = max * 85 / 100;
@@ -105,7 +105,7 @@ namespace WindowsFormsApplication1
                     min = double.Parse(label81.Text);
                     max = double.Parse(label89.Text);
                     mem = double.Parse(label97.Text);
-                    maxmon = 4590803;
+                    maxmon = 4729017;
                     maxcup = max * 90 / 100;
                     comrounds = 5;
                     comrep = max * 85 / 100;
@@ -115,7 +115,7 @@ namespace WindowsFormsApplication1
                     min = double.Parse(label82.Text);
                     max = double.Parse(label90.Text);
                     mem = double.Parse(label98.Text);
-                    maxmon = 6206160;
+                    maxmon = 6295982;
                     maxcup = max * 90 / 100;
                     comrounds = 7;
                     comrep = max * 85 / 100;
@@ -125,7 +125,7 @@ namespace WindowsFormsApplication1
                     min = double.Parse(label83.Text);
                     max = double.Parse(label91.Text);
                     mem = double.Parse(label99.Text);
-                    maxmon = 5024017;
+                    maxmon = 5051964;
                     maxcup = max * 90 / 100;
                     comrounds = 4;
                     comrep = max * 85 / 100;
@@ -135,7 +135,7 @@ namespace WindowsFormsApplication1
                     min = double.Parse(label84.Text);
                     max = double.Parse(label92.Text);
                     mem = double.Parse(label100.Text);
-                    maxmon = 4801250;
+                    maxmon = 5068571;
                     maxcup = max * 90 / 100;
                     comrounds = 4;
                     comrep = max * 85 / 100;

@@ -38,5 +38,10 @@ namespace WindowsFormsApplication1
         {
             System.Diagnostics.Process.Start("https://90minutefever.atlassian.net/wiki/display/90MF/Game+Guide");
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

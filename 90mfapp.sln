@@ -5,6 +5,11 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "90MFApp", "WindowsFormsApplication1\90MFApp.csproj", "{6787ECC0-769D-44A3-957E-1A34EE84C46D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C719425A-88FE-4BD7-9E0F-A5B2A1702FCB}"
+	ProjectSection(SolutionItems) = preProject
+		Player.cs = Player.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
