@@ -42,7 +42,7 @@ namespace WindowsFormsApplication1
 
         }
 
-        //main menu button
+        //main menu  back button
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
@@ -187,6 +187,8 @@ namespace WindowsFormsApplication1
             each = r / mem;
 
 
+
+            //sets variable to later work out the rep and prize money for each div
             String div = comboBox2.Text;
 
             int minpos = 0;
@@ -218,6 +220,8 @@ namespace WindowsFormsApplication1
                     break;
             }
 
+
+            //rep calculations
             String text = textBox1.Text;
             p = Int32.Parse(text);
 
@@ -270,7 +274,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        //copys values form textboxes to labels
+        //copys values from textboxes to labels
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             label25.Text = textBox2.Text;
@@ -982,7 +986,7 @@ namespace WindowsFormsApplication1
                 spcup = 0; // Default on parsing failure
             }
 
-
+            //works out highest rep earned from each and selects the highest
             if (facup > comcup 
                 && facup > ninecup 
                 && facup > chcup 
